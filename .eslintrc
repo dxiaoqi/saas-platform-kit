@@ -1,0 +1,14 @@
+{
+  "plugins": ["perrite", "prettier"],
+  "extends": ["plugin:perrite/recommended", "prettier"],
+  "rules": {
+    "no-console": "warn", // 警告使用console
+    "semi": ["error", "always"], // 强制使用分号
+    "quotes": ["error", "single"], // 强制使用单引号
+    "indent": ["error", 2], // 强制使用2个空格缩进
+    "no-unused-vars": "warn", // 警告未使用的变量
+    "eqeqeq": ["error", "always"], // 强制使用全等
+    "curly": "error", // 强制使用大括号
+    "prettier/prettier": "error",
+  },
+}

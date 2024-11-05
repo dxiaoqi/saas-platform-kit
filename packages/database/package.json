@@ -1,0 +1,27 @@
+{
+  "name": "@saas-platform/database",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "pnpm run prisma:merge && tsup",
+    "clean": "rm -rf .turbo node_modules dist",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push --skip-generate",
+    "format": "prisma format",
+    "lint": "eslint \"src/**/*.ts\"",
+    "prisma:merge": "prisma-import -f ./prisma/prisma.import.json"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.7.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.7.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "prisma-merge": "^0.2.0",
+    "prisma-import": "^1.0.5"
+  }
+}

@@ -1,0 +1,12 @@
+node_modules
+.turbo
+dist
+build
+.next
+.env
+.env.*
+!.env.example
+
+# Prisma
+packages/database/prisma/generated/
+packages/database/prisma/migrations/
