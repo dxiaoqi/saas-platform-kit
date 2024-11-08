@@ -1,5 +1,9 @@
+// @ts-check
+
+const withNextIntl = require('next-intl/plugin')();
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const config = {
   reactStrictMode: true,
   transpilePackages: ['@saas-platform/database'],
   typescript: {
@@ -10,4 +14,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = withNextIntl(config);
