@@ -1,0 +1,27 @@
+services:
+  app:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    ports:
+      - '8000:8000'
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgresql://myuser:dinweito@db:5432/mydatabase
+      - JWT_SECRET=your-super-secret-key
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=dinweito
+      - POSTGRES_DB=mydatabase
+    ports:
+      - '5432:5432'
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
